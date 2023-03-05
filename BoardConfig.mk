@@ -179,6 +179,7 @@ TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
 TARGET_USES_MKE2FS := true # Use mke2fs to create ext4 images
 TW_HAS_MTP := true
+TW_LOAD_VENDOR_MODULES := "tran_fre.ko wmt_drv.ko met.ko connfem.ko fpsgo.ko"
 
 # Crypto
 TW_INCLUDE_CRYPTO := true

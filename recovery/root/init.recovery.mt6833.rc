@@ -75,13 +75,13 @@ on property:hwservicemanager.ready=true
     start keymaster_attestation-1-1
 
 # Fix flashlight on orangefox
-on property:ro.orangefox.boot=1
-    mkdir /tmp/flashlight
-    write /tmp/flashlight/max_brightness "208"
-    symlink /sys/devices/platform/flashlights_mt6360/torch_brightness /tmp/flashlight/brightness
+#on property:ro.orangefox.boot=1
+    #mkdir /tmp/flashlight
+    #write /tmp/flashlight/max_brightness "208"
+    #symlink /sys/devices/platform/flashlights_mt6360/torch_brightness /tmp/flashlight/brightness
 
 # Enable DT2W
-    write /sys/devices/platform/11007000.i2c0/i2c-0/0-0038/fts_gesture_mode "1"
+    #write /sys/devices/platform/11007000.i2c0/i2c-0/0-0038/fts_gesture_mode "1"
 
 on boot
     start health-hal-2-1

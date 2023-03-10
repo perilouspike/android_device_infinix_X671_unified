@@ -74,6 +74,18 @@ on property:hwservicemanager.ready=true
     start gatekeeper-1-0
     start keymaster_attestation-1-1
 
+on property:ro.crypto.state=unsupported
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+
+on property:ro.crypto.state=unencrypted
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+
+on property:twrp.decrypt.done=true
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+
 # Fix flashlight on orangefox
 #on property:ro.orangefox.boot=1
     #mkdir /tmp/flashlight
@@ -85,5 +97,4 @@ on property:hwservicemanager.ready=true
 
 on boot
     start health-hal-2-1
-    start boot-hal-1-2    
-    
+    start boot-hal-1-2

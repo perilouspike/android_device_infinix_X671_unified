@@ -67,8 +67,9 @@ BOARD_KERNEL_TAGS_OFFSET := 0x07c08000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x11088000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.force_normal_boot=1
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery  # TODO: Used in other device tree. Do we need it?
 
@@ -195,7 +196,7 @@ TW_INCLUDE_FUSE_NTFS := true
 
 # Excludes
 TW_EXCLUDE_TWRP_APP := true
-TW_EXCLUDE_APEX := true
+#TW_EXCLUDE_APEX := true
 
 # Include some binaries
 TW_INCLUDE_LIBRESETPROP := true
@@ -212,5 +213,5 @@ TW_DEFAULT_BRIGHTNESS := 500
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Property Override
-#TW_OVERRIDE_SYSTEM_PROPS := \
-    #"ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"

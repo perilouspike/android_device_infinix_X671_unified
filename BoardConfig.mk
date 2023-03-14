@@ -22,9 +22,6 @@ ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-# Display
-#TARGET_SCREEN_DENSITY := 480
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -46,7 +43,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := Infinix-X671,X671
+TARGET_OTA_ASSERT_DEVICE := Infinix-X671,X671,x671
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6833
@@ -67,7 +64,6 @@ BOARD_KERNEL_TAGS_OFFSET := 0x07c08000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x11088000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
-#BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
 BOARD_KERNEL_CMDLINE += androidboot.force_normal_boot=1
@@ -168,50 +164,4 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 
 # TWRP Configuration
-RECOVERY_SDCARD_ON_DATA := true
-TW_THEME := portrait_hdpi
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-#TW_SCREEN_BLANK_ON_BOOT := true
-TW_NO_SCREEN_BLANK := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TARGET_USES_MKE2FS := true # Use mke2fs to create ext4 images
-TW_HAS_MTP := true
-#TW_LOAD_VENDOR_MODULES := "tran_fre.ko wmt_drv.ko met.ko connfem.ko fpsgo.ko"
-TW_INCLUDE_NTFS_3G := true
-
-# Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-
-# Debug-tools
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
-
-# exFAT FS Support
-TW_INCLUDE_FUSE_EXFAT := true
-
-# NTFS Support
-TW_INCLUDE_FUSE_NTFS := true
-
-# Excludes
-TW_EXCLUDE_TWRP_APP := true
-TW_EXCLUDE_APEX := true
-
-# Include some binaries
-TW_INCLUDE_LIBRESETPROP := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_RESETPROP := true
-TW_INCLUDE_BASH := true
-
-# Maintainer/Version
-TW_DEVICE_VERSION := perilouspike
-
-# Set brightness path and level
-TW_MAX_BRIGHTNESS := 1000
-TW_DEFAULT_BRIGHTNESS := 500
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-
-# Property Override
-TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+include $(DEVICE_PATH)/configs/TWRP_config.mk

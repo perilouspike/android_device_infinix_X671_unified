@@ -31,3 +31,7 @@
 /otp                      emmc     /dev/block/by-name/otp
 /spmfw                    emmc     /dev/block/by-name/spmfw             flags=slotselect
 /tranfs                   ext4     /dev/block/by-name/tranfs            flags=backup=1
+
+# Removable storage
+/external_sd              vfat      /dev/block/mmcblk0p1      /dev/block/mmcblk0    flags=display="Micro SD";storage;wipeingui;removable
+/usb-otg                  vfat      /dev/block/sdd1           /dev/block/sdd        flags=display="USB Storage";fsflags=utf8;storage;wipeingui;removable

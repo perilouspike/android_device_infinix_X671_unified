@@ -10,7 +10,7 @@
 /vbmeta_system            emmc     /dev/block/by-name/vbmeta_system     flags=display="Vbmeta_system";backup=1;flashimg=1;slotselect
 
 # Other partitions.
-/boot                     emmc     /dev/block/by-name/boot              flags=display="Boot";backup=1;flashimg=1;slotselect
+#/boot                     emmc     /dev/block/by-name/boot              flags=display="Boot";backup=1;flashimg=1;slotselect
 /dtbo                     emmc     /dev/block/by-name/dtbo              flags=display="Dtbo";backup=1;flashimg=1;slotselect
 /metadata                 ext4     /dev/block/by-name/metadata          flags=display="Metadata"
 /persist                  ext4     /dev/block/by-name/persist           flags=display="Persist";backup=1

@@ -33,5 +33,8 @@
 /tranfs                   ext4     /dev/block/by-name/tranfs            flags=backup=1
 
 # Removable storage
-/external_sd              vfat      /dev/block/mmcblk0p1      /dev/block/mmcblk0    flags=display="Micro SD";storage;wipeingui;removable
-/usb-otg                  vfat      /dev/block/sdd1           /dev/block/sdd        flags=display="USB Storage";fsflags=utf8;storage;wipeingui;removable
+/sdcard1                  vfat      /dev/block/mmcblk0p1      /dev/block/mmcblk0    flags=display="MicroSD";flags=fsflags=utf8;storage;wipeingui;removable
+/usb_otg                  vfat      /dev/block/sdd1           /dev/block/sdd        flags=display="USB-Storage";fsflags=utf8;storage;wipeingui;removable
+
+# The fstab must provide for backup of internal storage (mounted as "/storage") for OFOX.
+/storage                  ext4      /data/media/0                       flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable

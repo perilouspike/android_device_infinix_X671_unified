@@ -23,4 +23,5 @@ The Infinix Note 12 5G (codenamed _'X671'_) is a mid-range smartphone launched i
 
 ## Infinix Note 12 5G
 
-![image](https://www.91mobiles.com/infinix-note-12-5g-price-in-india?ty=gallery#gallery-1)
+![image](https://fdn2.gsmarena.com/vv/pics/infinix/infinix-note12-5g-1.jpg)
+![image](https://fdn2.gsmarena.com/vv/pics/infinix/infinix-note12-5g-2.jpg)
